@@ -1,11 +1,12 @@
 ---
 - hosts: worlddev
   become: yes
+  gather_facts: true
   tasks:
   - name: update packages
-     yum:
-        name: '*'
-        state: latest
-        register: result
+     yum: state=latest update_cache=true
+     register: yumoutput
+     when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
   - name: Show Output
-    debug: msg="{{ result.stdout_lines }}"
+  - debug: var=yumoutput
+    msg: "{{ yumoutput.results | map(attribute='name') | list }}
