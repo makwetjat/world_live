@@ -3,9 +3,9 @@
   become: yes
   tasks:
   - name: update packages
-      yum:
-         name: '*'
-         state: latest
-         register: result
+     yum:
+        name: '*'
+        state: latest
+        register: result
   - name: Show Output
     debug: msg="{{ result.stdout_lines }}"
