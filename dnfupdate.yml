@@ -5,6 +5,3 @@
   tasks:
   - name: check for updates (yum)
     yum: list=updates update_cache=true
-    register: result
-  - name: Show Output
-    debug: msg="{{ result.stdout_lines }}"
