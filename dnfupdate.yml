@@ -3,10 +3,6 @@
   tasks:
   - name: install all updates
     yum:
-      upgrade: dist
-      update_cache: yes
-      autoremove: yes
-      autoclean: yes
     register: result
   - name: List installed and updated packages
     shell: grep -E "^$(date +%Y-%m-%d).+ (install|upgrade) " /var/log/dpkg.log |cut -d " " -f 3-5
