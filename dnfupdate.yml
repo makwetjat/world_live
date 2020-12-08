@@ -4,4 +4,4 @@
 
   tasks:
   - name: check for updates (yum)
-    yum: list=updates update_cache=true
+    yum: name="*" state=latest
