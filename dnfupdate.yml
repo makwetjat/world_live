@@ -2,7 +2,7 @@
 - hosts: worlddev
   tasks:
   - name: install all updates
-    dnf:
+    yum:
       upgrade: dist
       update_cache: yes
       autoremove: yes
