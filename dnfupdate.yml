@@ -6,6 +6,5 @@
   - name: check for updates (yum)
     yum: list=updates update_cache=true
     register: result
-    when: ansible_os_family == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
   - name: Show Output
     debug: msg="{{ result.stdout_lines }}"
