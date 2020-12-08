@@ -1,5 +1,6 @@
 ---
 - hosts: worlddev
+  become: yes
   gather_facts: true
 
   tasks:
