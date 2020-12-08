@@ -2,11 +2,7 @@
 - hosts: worlddev
   tasks:
   - name: install all updates
-    dnf:
-      upgrade: dist
-      update_cache: yes
-      autoremove: yes
-      autoclean: yes
+    yum:
     register: result
   - name: List installed and updated packages
     shell: grep -E "^$(date +%Y-%m-%d).+ (install|upgrade) " /var/log/dpkg.log |cut -d " " -f 3-5
