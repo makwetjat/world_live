@@ -2,8 +2,9 @@
 - hosts: worlddev
   become: yes
   tasks:
-- name: install all updates
+- name: update packages
     yum:
+       name: '*'
        state: latest
        register: result
   - name: Show Output
