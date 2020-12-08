@@ -3,7 +3,7 @@
   become: yes
   tasks:
 - name: install all updates
-   yum:
+    yum:
        state: latest
        register: result
   - name: Show Output
