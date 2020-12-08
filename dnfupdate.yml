@@ -2,9 +2,9 @@
 - hosts: worlddev
   become: yes
   tasks:
-  - name: install all updates
+- name: install all updates
     yum:
-    state: latest
-    register: result
+       state: latest
+       register: result
   - name: Show Output
     debug: msg="{{ result.stdout_lines }}"
