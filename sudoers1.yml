@@ -8,6 +8,6 @@
       path: /etc/sudoers
       state: present
       backup: yes
-      line: 'progress ALL=NOPASSWD: /bin/systemctl  status httpd'
+      line: 'progress ALL=NOPASSWD: /bin/systemctl  restart httpd'
       validate: '/usr/sbin/visudo -cf %s'
 

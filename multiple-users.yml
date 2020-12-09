@@ -1,10 +1,10 @@
 ---
-- hosts: abcz 
+- hosts: prod 
   become: true
   become_user: root
 
   tasks:
-    - name: create directory
+    - name: create temp directory
       command: mkdir -p /tmp/appsrc
     
     - name: Transfer the script
