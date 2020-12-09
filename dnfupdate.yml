@@ -1,9 +1,7 @@
 ---
-<<<<<<< HEAD
 - hosts: dev
 =======
 - hosts: prod
->>>>>>> 9a7f669839282356c2261dd0d913535a0e239174
   become: yes
   gather_facts: true
 
