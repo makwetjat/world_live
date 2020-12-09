@@ -19,7 +19,7 @@
       register: result_copy
    
     - name: Execute user creation script
-      command: sh /dbbackup/appsrc/pro-sec-import
+      command: sh /tmp/appsrc/pro-sec-import
       register: usercreate_check
     - debug: msg="Users successfully created"
       when: usercreate_check.rc == 0
