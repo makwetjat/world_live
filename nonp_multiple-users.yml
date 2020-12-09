@@ -24,7 +24,7 @@
     - debug: msg="Users successfully created"
       when: usercreate_check.rc == 0
     
-    - name: remove the scripts on managed hosts
+    - name: remove the scripts on managed hosts after adding users
       command: rm -rf /tmp/appsrc
       register: delscripts_check
     - debug: msg="scripts deleted on managed hosts"
