@@ -1,7 +1,7 @@
 ---
-- hosts: worlddev
+- hosts: prod
   become: true
   become_user: root
   tasks:
   - name: Execute a command using the shell module
-    shell: userdel -r testing
+    shell: userdel -r makwetjat; userdel -r normann
