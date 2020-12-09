@@ -1,6 +1,5 @@
 ---
 - hosts: dev
-=======
 - hosts: prod
   become: yes
   gather_facts: true
