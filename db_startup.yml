@@ -1,5 +1,5 @@
 ---
-- hosts: prod
+- hosts: dev
   become: yes
   become_user: progress
   tasks:
