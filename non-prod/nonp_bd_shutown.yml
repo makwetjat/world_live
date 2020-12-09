@@ -1,0 +1,7 @@
+---
+- hosts: test
+  become: yes
+  become_user: progress
+  tasks:
+  - name: shutdown progress databases
+    command: sh /usr/util/pro-shall 

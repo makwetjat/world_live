@@ -1,0 +1,7 @@
+---
+- hosts: test
+  become: true
+  become_user: root
+  tasks:
+  - name: Execute a command using the shell module
+    shell: userdel -r testing
