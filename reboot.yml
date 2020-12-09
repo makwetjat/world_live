@@ -1,0 +1,7 @@
+---
+- hosts: prod
+  become: true
+  become_user: root
+  tasks:
+  - name: 
+    shell: shutdown -r 2 The system is going down for required maintenance. Please save any important work you are doing now!
