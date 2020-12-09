@@ -1,0 +1,7 @@
+---
+- hosts: prod
+  become: yes
+  become_user: progress
+  tasks:
+  - name: Startup progress DBs and tomcat
+    command: sh /usr/util/pro-stdef
