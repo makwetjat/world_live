@@ -4,5 +4,5 @@
   gather_facts: true
 
   tasks:
-  - name: check for updates (yum)
+  - name: Installing Updates (yum)
     yum: name="*" state=latest
