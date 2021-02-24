@@ -5,4 +5,4 @@
 
   tasks:
   - name: copy the file
-    copy: src=/tmp/util_default/ dest=/tmp/testing_ansible owner=progress group=progress mode=775 backup=ye
+    copy: src=/tmp/util_default/ dest=/tmp/testing_ansible owner=progress group=progress mode=775 backup=yes force=yes
