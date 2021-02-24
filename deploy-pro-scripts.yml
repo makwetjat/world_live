@@ -1,0 +1,8 @@
+---
+
+- hosts: miptest
+  become: yes
+
+  tasks:
+  - name: copy the file
+    copy: src=/tmp/util_default/ dest=/tmp/testing_ansible owner=progress group=progress mode=775
