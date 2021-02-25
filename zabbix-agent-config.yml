@@ -5,4 +5,4 @@
 
   tasks:
   - name: copy the file
-    copy: src=/tmp/zabbix-config dest=/tmp/util / owner=progress group=progress mode=775 backup=yes force=yes
+    copy: src=/tmp/zabbix-config dest=/tmp/util/ owner=progress group=progress mode=775 backup=yes force=yes
