@@ -8,14 +8,14 @@
       command: mkdir -p /tmp/appsrc
     
     - name: Transfer the script
-      copy: src=/home/world/ansible/nwr/usercreation/multiple-users/sec-mipit.user dest=/tmp/appsrc mode=0777
+      copy: src=/apps/ansible/nwr/usercreation/multiple-users/sec-mipit.user dest=/tmp/appsrc mode=0777
       register: result_copy
     - name: Transfer the script
-      copy: src=/home/world/ansible/nwr/usercreation/multiple-users/sec-mipit.pswd dest=/tmp/appsrc mode=0777
+      copy: src=/apps/ansible/nwr/usercreation/multiple-users/sec-mipit.pswd dest=/tmp/appsrc mode=0777
       register: result_copy
 
     - name: Transfer the script
-      copy: src=/home/world/ansible/nwr/usercreation/multiple-users/pro-sec-import dest=/tmp/appsrc mode=0777
+      copy: src=/apps/ansible/nwr/usercreation/multiple-users/pro-sec-import dest=/tmp/appsrc mode=0777
       register: result_copy
    
     - name: Execute user creation script
