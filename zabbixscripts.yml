@@ -13,6 +13,7 @@
      
     - name: uncompressing the tarball
       unarchive: src=/apps/ansible/temp/zabbix/zabbixscripts.tgz dest=/apps/ansible/temp/zabbix/ remote_src=True
+      register: uncompress_check
     - debug: msg="tarball successfully uncompressing"
       when: uncompress_check.rc == 0
     
