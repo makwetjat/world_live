@@ -12,7 +12,7 @@
       register: result_copy
      
     - name: uncompressing the tarball
-      unarchive: src=/apps/ansible/temp/zabbix/zabbixscripts.tgz dest=/apps/ansible/temp/zabbix/ remote_src=True
+      unarchive: src=/apps/ansible/temp/zabbix/zabbixscripts.tgz dest=/apps/ansible/zabbix/ remote_src=True
     
     - name: remove the scripts on managed hosts after adding users
       file: path=/apps/ansible/temp/zabbix state=absent
