@@ -1,0 +1,27 @@
+---
+- hosts: test:dev 
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Creating the tarball
+      archive: path=/apps/ansible/zabbixscripts dest=/apps/ansible/zabbixscripts.tgz
+     
+    - name: create temp directory
+      file: path=/apps/ansible/temp/zabbix state=directory state=present
+      
+    - name: Transfer the tarball
+      copy: src=/apps/ansible/zabbixscripts.tgz dest=/apps/ansible/ owner=progress group=progress mode=775
+      register: result_copy
+     
+    - name: uncompressing the tarball
+      command: tar xvzf /apps/ansible/zabbixscripts.tg /apps/ansible/temp/zabbix/
+      register: uncompress_check
+    - debug: msg="tarball successfully uncompressing"
+      when: uncompress_check.rc == 0
+    
+    - name: remove the scripts on managed hosts after adding users
+      file: path=/apps/ansible/temp/zabbix state=directory state=absent
+      register: deldir_check
+    - debug: msg="temp dir deleted on managed hosts"
+      when: deldir_check.rc == 0
