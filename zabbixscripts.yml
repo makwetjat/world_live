@@ -6,7 +6,7 @@
   tasks:
   
     - name: Creating the tarball
-      include: zabbixtar.yml
+      import_playbook: zabbixtar.yml
      
     - name: create temp directory
       file: path=/apps/ansible/temp/zabbix state=directory state=present
