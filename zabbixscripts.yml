@@ -5,7 +5,7 @@
 
   tasks:   
     - name: create temp directory
-      file: path=/apps/ansible/temp/zabbix state=directory state=present
+      file: path=/apps/ansible/temp/zabbix state=directory 
       
     - name: Transfer the tarball
       copy: src=/apps/ansible/zabbixscripts.tgz dest=/apps/ansible/ owner=progress group=progress mode=775
@@ -18,7 +18,7 @@
       when: uncompress_check.rc == 0
     
     - name: remove the scripts on managed hosts after adding users
-      file: path=/apps/ansible/temp/zabbix state=directory state=absent
+      file: path=/apps/ansible/temp/zabbix state=absent
       register: deldir_check
     - debug: msg="temp dir deleted on managed hosts"
       when: deldir_check.rc == 0
