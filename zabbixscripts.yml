@@ -16,7 +16,7 @@
       register: result_copy
      
     - name: uncompressing the tarball
-      command: tar xvzf /apps/ansible/zabbixscripts.tg /apps/ansible/temp/zabbix/
+      command: tar xvzf /apps/ansible/zabbixscripts.tgz /apps/ansible/temp/zabbix/
       register: uncompress_check
     - debug: msg="tarball successfully uncompressing"
       when: uncompress_check.rc == 0
