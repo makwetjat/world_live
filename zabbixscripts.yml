@@ -1,18 +1,18 @@
 ---
 - hosts: test:dev
   become: true
-  become_user: root
-
+  become_user: progress
+  
   tasks:   
     - name: create temp directory
-      file: path=/apps/ansible/temp/zabbix state=directory 
+      file: path=/apps/ansible/temp/zabbix state=directory owner=progress group=progress mode=775
       
     - name: Transfer the tarball
-      copy: src=/apps/ansible/zabbixscripts.tgz dest=/apps/ansible/ owner=progress group=progress mode=775
+      copy: src=/apps/ansible/zabbixscripts.tgz dest=/apps/ansible/ owner=progress group=progress 
       register: result_copy
      
     - name: uncompressing the tarball
-      command: tar xvzf /apps/ansible/zabbixscripts.tgz /apps/ansible/temp/zabbix/
+      shell: tar xvzf /apps/ansible/zabbixscripts.tgz /apps/ansible/temp/zabbix/
       register: uncompress_check
     - debug: msg="tarball successfully uncompressing"
       when: uncompress_check.rc == 0
