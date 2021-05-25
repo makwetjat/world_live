@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Creating the tarball
+      command: tar cvzf /apps/ansible/zabbixscripts.tgz /apps/ansible/zabbixscripts
