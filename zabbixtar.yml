@@ -7,5 +7,5 @@
     - debug:
         msg: play1
   
-    - name: Creating the tarball
-      command: tar cvzf /apps/ansible/zabbixscripts.tgz /apps/ansible/zabbixscripts
+    - name: Creating the scripts tarball 
+      shell: sh /apps/ansible/config/zabbixtar
