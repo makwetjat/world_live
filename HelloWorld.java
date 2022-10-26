@@ -10,7 +10,11 @@ class HelloWorld
         System.out.println("Hello, World");
     }
 }
-{
-   Process proc = Runtime.getRuntime().exec("/usr/bin/dnf update -y");                        
-   proc.waitFor();
+
+public static void main(String... args) {
+    Main main = new Main();
+ 
+    //test command in linux
+    main.runCommand("pwd");
+    main.runCommand("dnf", "update", "-y");
 }
