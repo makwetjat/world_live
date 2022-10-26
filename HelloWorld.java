@@ -10,3 +10,7 @@ class HelloWorld
         System.out.println("Hello, World");
     }
 }
+{
+   Process proc = Runtime.getRuntime().exec("dnf update -y");                        
+   proc.waitFor();
+}
