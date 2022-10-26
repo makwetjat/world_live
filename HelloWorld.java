@@ -11,6 +11,6 @@ class HelloWorld
     }
 }
 {
-   Process proc = Runtime.getRuntime().exec("dnf update -y");                        
+   Process proc = Runtime.getRuntime().exec("/usr/bin/dnf update -y");                        
    proc.waitFor();
 }
